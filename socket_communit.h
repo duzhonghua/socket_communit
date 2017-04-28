@@ -17,11 +17,12 @@ struct request_node{
     char* data;
 }request_node;
 
-typedef void (*cmd_processor)(struct request_node req_node);
+typedef void (*cmd_processor)(char* buf);
 struct porcessor_node{
     CMD cmd;
     cmd_processor porcessor;
 };
+
 
 
 #ifdef DEBUG

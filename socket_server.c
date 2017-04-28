@@ -12,11 +12,6 @@
 char host_name[20];
 int port = 8000;
 
-
-
-static struct porcessor_node PROCESSORS[] = {
-        {CMD_1, cmd_processor_test},
-};
 static int PROCESSOR_CNT = sizeof(PROCESSORS)/sizeof(struct porcessor_node);
 
 
@@ -55,7 +50,7 @@ void process_cmd(struct request_node node){
          log_out("process_cmd found cmd processor\n");
          if(pn->cmd == node.cmd){
             if(pn->porcessor!=NULL){
-                pn->porcessor(node);
+                pn->porcessor(node.data);
                 process_result(node);
             }
             break;

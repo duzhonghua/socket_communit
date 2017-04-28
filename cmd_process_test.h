@@ -3,14 +3,14 @@
 #include "socket_communit.h"
 #include <strings.h> 
 
-void cmd_processor_test(struct request_node req_node){
+void cmd_processor_test(char* buf){
     int i;
     int len;
    
-    len=strlen(req_node.data);
+    len=strlen(buf);
     for(i=0;i<len; i++)
     {
-        req_node.data[i]=toupper(req_node.data[i]);
+        buf[i]=toupper(buf[i]);
     }
 }
 #endif
